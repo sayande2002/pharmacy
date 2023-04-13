@@ -8,7 +8,12 @@ export const navbarLists = [
     component: <HomeOutlinedIcon style={{ fill: "black", fontSize: "30px" }} />,
     route: "/",
   },
-
+  {
+    id: 1,
+    name: "Shop",
+    component: <HomeOutlinedIcon style={{ fill: "black", fontSize: "30px" }} />,
+    route: "/shop",
+  },
   {
     id: 4,
     name: "My Cart",

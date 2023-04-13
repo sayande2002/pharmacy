@@ -4,6 +4,7 @@ import NewTooltip from "../../lib/tooltip.jsx";
 import LargeNavbar from "./largenavbar/largenavbar.jsx";
 import SmallNavbar from "./smallnavbar/smallnavbar.jsx";
 import Button from "components/button.jsx";
+import ScrollTop from "layout/scrollTop/scrollTop.jsx";
 
 const Navbar = () => {
   return (
@@ -42,6 +43,7 @@ const Navbar = () => {
           </>
         )}
       </div>
+      <ScrollTop />
     </header>
   );
 };
