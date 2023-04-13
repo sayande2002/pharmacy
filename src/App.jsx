@@ -13,7 +13,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<RenderPage Page={HomePage} />} />
-      <Route path="/shop" element={<RenderPage Page={ShopPage} />} />
+      <Route path="/shop/*" element={<RenderPage Page={ShopPage} />} />
       <Route path="/login" element={<RenderPage Page={LoginPage} />} />
       <Route path="/signup" element={<RenderPage Page={SignupPage} />} />
       <Route path="*" element={<RenderPage Page={ErrorPage} />} />
