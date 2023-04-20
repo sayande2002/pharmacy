@@ -1,17 +1,15 @@
-import React from "react";
-import FormInput from "components/FormInput";
-import Button from "components/button";
-import SearchIcon from "@mui/icons-material/Search";
+import React, { useEffect, useRef } from "react";
+import HomeSearch from "components/home-page-components/home-search/home-search";
 
 const ShopPage = () => {
+  const focusRef = useRef();
+  useEffect(() => {
+    focusRef.current.focus();
+  }, []);
+
   return (
-    <div>
-      <form className="flex justify-center">
-        <FormInput label="Search Product" type="search" name="gsearch" />
-        <Button buttonType="inverted" type="submit">
-          <SearchIcon />
-        </Button>
-      </form>
+    <div className="flex flex-col items-center justify-center gap-8">
+      <HomeSearch ref={focusRef} />
     </div>
   );
 };

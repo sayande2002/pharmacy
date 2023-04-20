@@ -21,28 +21,13 @@ const Navbar = () => {
         <NewTooltip title="Go Home">Pharmacy</NewTooltip>
       </Link>
       <LargeNavbar />
-      <div className="ml-auto mr-3 flex items-center justify-center gap-3">
-        {document.cookies ? (
-          <Link to="/login">
-            <NewTooltip title="Log Out">
-              <Button buttonType="inverted">Log Out</Button>
-            </NewTooltip>
-          </Link>
-        ) : (
-          <>
-            <Link to="/login">
-              <NewTooltip title="Log In">
-                <Button buttonType="inverted">Log In</Button>
-              </NewTooltip>
-            </Link>
-            <Link to="/signup">
-              <NewTooltip title="Sign Up">
-                <Button buttonType="inverted">Sign Up</Button>
-              </NewTooltip>
-            </Link>
-          </>
-        )}
-      </div>
+      {/* <div className="ml-auto mr-3 flex items-center justify-center gap-3">
+        <Link to="/enter">
+          <NewTooltip title="Enter">
+            <Button buttonType="inverted">Enter</Button>
+          </NewTooltip>
+        </Link>
+      </div> */}
       <ScrollTop />
     </header>
   );

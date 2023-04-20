@@ -4,7 +4,7 @@ import "./directory-item.styles.scss";
 const DirectoryItem = ({ category }) => {
   const { imageUrl, title, routes } = category;
   return (
-    <Link className="directory-item-container" to={`/shop/${routes}`}>
+    <Link className="directory-item-container" to={"/shop"}>
       <div
         className="background-image"
         style={{
@@ -13,10 +13,10 @@ const DirectoryItem = ({ category }) => {
       />
       <div className="body">
         <h2>{title.toUpperCase()}</h2>
-        <p>SHOP NOW</p>
       </div>
     </Link>
   );
 };
 
 export default DirectoryItem;
+// to={`/shop/${routes}`}

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const CartDropdown = ({ setOpen }) => {
   // const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
+
   const goToCheckoutHandler = () => {
     setOpen((prev) => !prev);
     navigate("/cart");
