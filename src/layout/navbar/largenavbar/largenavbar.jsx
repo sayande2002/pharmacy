@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NewTooltip from "lib/tooltip";
 import { navbarLists } from "layout/navbar/navbarLists";
 import CartDropdown from "components/cart-dropdown/cart-dropdown.component";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { selectCartCount } from "store/add-to-cart-selector";
 
 const LargeNavbar = () => {
+  const cartCount = useSelector(selectCartCount);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
@@ -24,18 +27,18 @@ const LargeNavbar = () => {
 
         <div
           className="relative flex rounded-[50%] p-2 cursor-pointer"
-          // onClick={() => setOpen((prev) => !prev)}
-          onClick={() => navigate("/cart")}
+          onClick={() => setOpen((prev) => !prev)}
+          // onClick={() => navigate("/cart")}
         >
           <NewTooltip title="My Cart">
             <ShoppingCartOutlinedIcon
               style={{ fill: "black", fontSize: "30px" }}
             />
             <span className="absolute	top-[1px] right-[0px] flex h-5 w-5 items-center justify-center rounded-[50%] bg-red-600 text-xs font-light text-white">
-              0
+              {cartCount}
             </span>
           </NewTooltip>
-          {/* {open && <CartDropdown setOpen={setOpen} />} */}
+          {open && <CartDropdown setOpen={setOpen} open={open} />}
         </div>
       </nav>
     </>
