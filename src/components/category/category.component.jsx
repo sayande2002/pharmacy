@@ -29,7 +29,7 @@ const Category = () => {
         // ) : (
         <div className="category-container">
           {products &&
-            products.map((product) => (
+            products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>

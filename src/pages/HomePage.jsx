@@ -50,7 +50,7 @@ const HomePage = () => {
       <HomeSearch />
       <Directory categories={categories} />
       <HomeProducts>
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard product={product} />
         ))}
       </HomeProducts>

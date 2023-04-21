@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import "./home-search.scss";
 
-const HomeSearch = React.forwardRef((_, ref) => {
+const HomeSearch = React.forwardRef(({ setValue, value }, ref) => {
   const navigate = useNavigate();
   return (
     <form className="home-search">
@@ -18,6 +18,8 @@ const HomeSearch = React.forwardRef((_, ref) => {
         type="Search"
         placeholder="Search medicines & health products"
         onFocus={() => navigate("/shop")}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
       <Button
         className="absolute top-0 right-0 bottom-0 overflow-hidden rounded-lg z-10"
